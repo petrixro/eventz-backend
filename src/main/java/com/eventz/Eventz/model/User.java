@@ -38,6 +38,8 @@ public class User {
     @Enumerated(EnumType.STRING)
     private UserRole role;
 
+    private boolean isEnabled;
+
     @ManyToMany(mappedBy="userEvents", fetch = FetchType.LAZY)
     private Set<Event> events = new HashSet<>();
 

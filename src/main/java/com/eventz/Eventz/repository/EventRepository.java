@@ -13,4 +13,5 @@ import java.util.UUID;
 public interface EventRepository extends JpaRepository<Event, UUID> {
 
     List<Event> findEventByType(EventType type);
+    List<Event> findEventsByTitleContainingIgnoreCase(String title);
 }

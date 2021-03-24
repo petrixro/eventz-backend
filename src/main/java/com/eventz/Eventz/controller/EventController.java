@@ -54,5 +54,11 @@ public class EventController {
         return eventConverter.modelToDto(events);
     }
 
+    @GetMapping("/events/title/{title}")
+    public List<EventDTO> getEventsByTitle(@PathVariable (value = "title") String Title) {
+        List<Event> events = eventService.getEventsByName(Title);
+        return eventConverter.modelToDto(events);
+    }
+
 
 }

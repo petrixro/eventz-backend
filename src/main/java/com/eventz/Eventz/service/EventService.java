@@ -33,6 +33,10 @@ public class EventService {
                 orElseThrow(() -> new EventNotFoundException(id));
     }
 
+    public List<Event> getEventsByName(String name){
+        return eventRepository.findEventsByTitleContainingIgnoreCase(name);
+    }
+
     public List<Event> getEventsByType(EventType eventType){
         return eventRepository.findEventByType(eventType);
     }
