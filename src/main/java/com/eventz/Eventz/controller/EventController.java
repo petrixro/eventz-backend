@@ -16,7 +16,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/v1/")
-@CrossOrigin(origins = "https://eventz-app.herokuapp.com/")
+@CrossOrigin(origins = "https://eventz-app.herokuapp.com")
 public class EventController {
 
     @Autowired
