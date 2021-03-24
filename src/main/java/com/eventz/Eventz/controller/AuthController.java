@@ -30,7 +30,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "https://eventz-app.herokuapp.com/")
 @RestController
 @RequestMapping("/api/v1/auth")
 public class AuthController {
