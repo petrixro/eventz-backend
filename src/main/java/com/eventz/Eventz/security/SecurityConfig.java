@@ -59,6 +59,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.POST,"/api/v1/events/**").hasRole("COMPANY")
                 .and()
                 .addFilterBefore(authenticationJWTFilter(), UsernamePasswordAuthenticationFilter.class);
+        http.cors().disable();
     }
 }
 
