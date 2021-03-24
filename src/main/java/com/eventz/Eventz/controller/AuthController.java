@@ -86,7 +86,7 @@ public class AuthController {
         mailMessage.setSubject("Complete User Registration!");
         mailMessage.setFrom("petrix211@gmail.com");
         mailMessage.setText("To confirm your user account, please click here : "
-                +"http://localhost:8080/api/v1/auth/confirm-account?token="+confirmationToken.getConfirmationToken());
+                +"https://petrix-eventz-back.herokuapp.com/api/v1/auth/confirm-account?token="+confirmationToken.getConfirmationToken());
 
         emailSenderService.sendEmail(mailMessage);
         return ResponseEntity.ok("User registered successfully! Please activate your account");
