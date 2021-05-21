@@ -20,6 +20,10 @@ public class EventService {
         return eventRepository.findAll();
     }
 
+    public List<Event> getEventsByUserId(UUID userID){
+        return eventRepository.findEventsByUserId(userID);
+    }
+
     public Event addEvent(Event event) {
         return eventRepository.save(event);
     }

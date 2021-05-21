@@ -51,12 +51,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .httpBasic().disable()
                 .csrf().disable()
+                .cors().and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeRequests()
                 .antMatchers("/api/v1/auth/signin").permitAll() // allowed by anyone
                 .antMatchers("/api/v1/auth/signup").permitAll()
                 .antMatchers(HttpMethod.POST,"/api/v1/events/**").hasRole("COMPANY")
+                .antMatchers(HttpMethod.POST,"/api/v1/events/tickets/**").hasRole("USER")
+                .antMatchers(HttpMethod.DELETE,"/api/v1/events/**").hasRole("COMPANY")
                 .and()
                 .addFilterBefore(authenticationJWTFilter(), UsernamePasswordAuthenticationFilter.class);
     }

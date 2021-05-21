@@ -1,6 +1,7 @@
 package com.eventz.Eventz.dto;
 
 import com.eventz.Eventz.model.EventType;
+import com.eventz.Eventz.model.User;
 import lombok.Data;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;

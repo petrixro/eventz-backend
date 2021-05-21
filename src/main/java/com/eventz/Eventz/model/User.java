@@ -1,6 +1,8 @@
 package com.eventz.Eventz.model;
 
+import com.eventz.Eventz.dto.EventDTO;
 import lombok.*;
+import org.hibernate.annotations.Cascade;
 import org.springframework.boot.context.properties.bind.DefaultValue;
 
 import javax.persistence.*;
@@ -14,6 +16,7 @@ import java.util.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@ToString
 @Table (name = "users")
 public class User {
 
@@ -39,12 +42,12 @@ public class User {
     private UserRole role;
 
     private boolean isEnabled;
+    @ManyToMany(cascade=CascadeType.ALL)
+    @JoinTable(name = "user_events",
+            joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "events_id",
+                    referencedColumnName = "id"))
+    private Set<Event> events = new HashSet<>();;
 
-    @ManyToMany(mappedBy="userEvents", fetch = FetchType.LAZY)
-    private Set<Event> events = new HashSet<>();
 
-    @Override
-    public String toString(){
-        return "User [id=" + id + ", name=" + username + "]";
-    }
 }

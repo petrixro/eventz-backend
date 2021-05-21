@@ -1,6 +1,8 @@
 package com.eventz.Eventz.service;
 
+import com.eventz.Eventz.dto.EventDTO;
 import com.eventz.Eventz.exceptions.UserNotFoundException;
+import com.eventz.Eventz.model.Event;
 import com.eventz.Eventz.model.User;
 import com.eventz.Eventz.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;

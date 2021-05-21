@@ -15,7 +15,7 @@ import java.util.*;
 
 @RestController
 @RequestMapping("/api/v1/")
-@CrossOrigin(origins = "https://eventz-app.herokuapp.com")
+@CrossOrigin(origins = "http://localhost:3000")
 public class UserController {
 
     @Autowired
